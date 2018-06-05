@@ -1,156 +1,224 @@
 // Bassed on https://github.com/jesusgollonet/ofpennereasing
-
 //float time =0; // current time
 float begining  = 0; // start value
 float change = 1; // change in value
 float duration = 100;  // duration
+float scale = 50;
 
 
-void  vis(float x, float y){
-          ellipse( y * 100, x * -100, 1, 1);
+void vis(float a, float b) {
+  ellipse( b * scale, a * -scale, 1.5,1.5 );
 }
 
 void setup() {
-  translate(width/2, height/2);
-
+  size(100, 100);
+  translate(width/2 - scale/2, height/2 + scale/2);
+  String folderPath = sketchPath() + "/images/";
+  File folder = new File(folderPath);
+  folder.mkdir();
   noStroke();
-  fill(0);
-  size(500, 500);
+  fill(0,100);
   for(int f = 0; f < 11*3; f++){
   background(255);
   for (float t = 0; t < duration; t +=change) {
     switch(f){
       case 0:
         vis(Linear.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Linear.easeIn.png");
+        if (t== 0){
+          println("Calculating Linear.easeIn.png");
+          }
       break;
       case 1:
         vis(Linear.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Linear.easeOut.png");
+        if (t== 0){
+          println("Calculating Linear.easeOut.png");
+          }
       break;
       case 2:
         vis(Linear.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Linear.easeInOut.png");
+        if (t== 0){
+          println("Calculating Linear.easeInOut.png");
+          }
       break;
       case 3:
         vis(Back.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Back.easeIn.png");
+        if (t== 0){
+          println("Calculating Back.easeIn.png");
+          }
       break;
       case 4:
         vis(Back.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Back.easeOut.png");
+        if (t== 0){
+          println("Calculating Back.easeOut.png");
+          }
       break;
       case 5:
         vis(Back.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Back.easeInOut.png");
+        if (t== 0){
+          println("Calculating Back.easeInOut.png");
+          }
       break;
       case 6:
         vis(Bounce.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Bounce.easeIn.png");
+        if (t== 0){
+          println("Calculating Bounce.easeIn.png");
+          }
       break;
       case 7:
         vis(Bounce.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Bounce.easeOut.png");
+        if (t== 0){
+          println("Calculating Bounce.easeOut.png");
+          }
       break;
       case 8:
         vis(Bounce.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Bounce.easeInOut.png");
+        if (t== 0){
+          println("Calculating Bounce.easeInOut.png");
+          }
       break;
       case 9:
         vis(Circ.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Circ.easeIn.png");
+        if (t== 0){
+          println("Calculating Circ.easeIn.png");
+          }
       break;
       case 10:
         vis(Circ.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Circ.easeOut.png");
+        if (t== 0){
+          println("Calculating Circ.easeOut.png");
+          }
       break;
       case 11:
         vis(Circ.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Circ.easeInOut.png");
+        if (t== 0){
+          println("Calculating Circ.easeInOut.png");
+          }
       break;
             case 12:
         vis(Cubic.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Cubic.easeIn.png");
+        if (t== 0){
+          println("Calculating Cubic.easeIn.png");
+          }
       break;
       case 13:
         vis(Cubic.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Cubic.easeOut.png");
+        if (t== 0){
+          println("Calculating Cubic.easeOut.png");
+          }
       break;
       case 14:
         vis(Cubic.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Cubic.easeInOut.png");
+        if (t== 0){
+          println("Calculating Cubic.easeInOut.png");
+          }
       break;
       case 15:
         vis(Elastic.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Elastic.easeIn.png");
+        if (t== 0){
+          println("Calculating Elastic.easeIn.png");
+          }
       break;
       case 16:
         vis(Elastic.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Elastic.easeOut.png");
+        if (t== 0){
+          println("Calculating Elastic.easeOut.png");
+          }
       break;
       case 17:
         vis(Elastic.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Elastic.easeInOut.png");
+        if (t== 0){
+          println("Calculating Elastic.easeInOut.png");
+          }
       break;
       case 18:
         vis(Expo.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Expo.easeIn.png");
+        if (t== 0){
+          println("Calculating Expo.easeIn.png");
+          }
       break;
       case 19:
         vis(Expo.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Expo.easeOut.png");
+        if (t== 0){
+          println("Calculating Expo.easeOut.png");
+          }
       break;
       case 20:
         vis(Expo.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Expo.easeInOut.png");
+        if (t== 0){
+          println("Calculating Expo.easeInOut.png");
+          }
       break;
       case 21:
         vis(Quad.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Quad.easeIn.png");
+        if (t== 0){
+          println("Calculating Quad.easeIn.png");
+          }
       break;
       case 22:
         vis(Quad.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Quad.easeOut.png");
+        if (t== 0){
+          println("Calculating Quad.easeOut.png");
+          }
       break;
       case 23:
         vis(Quad.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Quad.easeInOut.png");
+        if (t== 0){
+          println("Calculating Quad.easeInOut.png");
+          }
       break;
       case 24:
         vis(Quart.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Quart.easeIn.png");
+        if (t== 0){
+          println("Calculating Quart.easeIn.png");
+          }
       break;
       case 25:
         vis(Quart.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Quart.easeOut.png");
+        if (t== 0){
+          println("Calculating Quart.easeOut.png");
+          }
       break;
       case 26:
         vis(Quart.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Quart.easeInOut.png");
+        if (t== 0){
+          println("Calculating Quart.easeInOut.png");
+          }
       break;
       case 27:
         vis(Quint.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Quint.easeIn.png");
+        if (t== 0){
+          println("Calculating Quint.easeIn.png");
+          }
       break;
       case 28:
         vis(Quint.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Quint.easeOut.png");
+        if (t== 0){
+          println("Calculating Quint.easeOut.png");
+          }
       break;
       case 29:
         vis(Quint.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Quint.easeInOut.png");
+        if (t== 0){
+          println("Calculating Quint.easeInOut.png");
+          }
       break;
       case 30:
         vis(Sine.easeIn(t, begining, change, duration),   Linear.easeIn(t, begining, change, duration));
-        println("Calculating Sine.easeIn.png");
+        if (t== 0){
+          println("Calculating Sine.easeIn.png");
+          }
       break;
       case 31:
         vis(Sine.easeOut(t, begining, change, duration),   Linear.easeOut(t, begining, change, duration));
-        println("Calculating Sine.easeOut.png");
+        if (t== 0){
+          println("Calculating Sine.easeOut.png");
+          }
       break;
       case 32:
         vis(Sine.easeInOut(t, begining, change, duration),   Linear.easeInOut(t, begining, change, duration));
-        println("Calculating Sine.easeInOut.png");
+        if (t== 0){
+          println("Calculating Sine.easeInOut.png");
+          }
     }
 
 
